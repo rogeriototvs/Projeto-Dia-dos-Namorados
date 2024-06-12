@@ -31,7 +31,12 @@ function chuvaDeFotos() {
         'images/foto1.jpg',
         'images/foto2.jpg',
         'images/foto3.jpg',
-        // Adicione mais URLs de fotos aqui
+        'images/foto4.jpg',
+        'images/foto5.jpg',
+        'images/foto6.jpg',
+        'images/foto7.jpg',
+        'images/foto8.jpg'
+        
     ];
 
     photoUrls.forEach((url, index) => {
@@ -44,7 +49,7 @@ function chuvaDeFotos() {
             photoContainer.appendChild(photo);
             setTimeout(() => {
                 photo.remove();
-            }, 5000); // Remove a foto após 5 segundos
-        }, index * 300); // Atraso de 300ms entre cada foto
+            }, 5000); 
+        }, index * 2000); 
     });
 }
