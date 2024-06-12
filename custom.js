@@ -21,34 +21,30 @@ function chuvaDeCoracoes() {
         heartContainer.appendChild(heart);
         setTimeout(() => {
             heart.remove();
-        }, 555000);
+        }, 5000);
     }
 }
 
 function chuvaDeFotos() {
     const photoContainer = document.getElementById('photoContainer');
     const photoUrls = [
-        'images/foto1.png',
+        'images/foto1.jpg',
         'images/foto2.jpg',
         'images/foto3.jpg',
-        'images/foto4.jpg',
-        'images/foto5.jpg',
-        'images/foto6.jpg',
-        'images/foto7.jpg',
-        'images/foto8.jpg',
-        
+        // Adicione mais URLs de fotos aqui
     ];
 
-    for (let i = 0; i < 20; i++) {
-        const photo = document.createElement('img');
-        const randomIndex = Math.floor(Math.random() * photoUrls.length);
-        photo.src = photoUrls[randomIndex];
-        photo.classList.add('photo');
-        photo.style.top = `${Math.random() * 100}vh`;
-        photo.style.left = `${Math.random() * 100}vw`;
-        photoContainer.appendChild(photo);
+    photoUrls.forEach((url, index) => {
         setTimeout(() => {
-            photo.remove();
-        }, 5000); // Remove the photo after 5 seconds
-    }
+            const photo = document.createElement('img');
+            photo.src = url;
+            photo.classList.add('photo');
+            photo.style.top = `${Math.random() * 100}vh`;
+            photo.style.left = `${Math.random() * 100}vw`;
+            photoContainer.appendChild(photo);
+            setTimeout(() => {
+                photo.remove();
+            }, 5000); // Remove a foto após 5 segundos
+        }, index * 300); // Atraso de 300ms entre cada foto
+    });
 }
