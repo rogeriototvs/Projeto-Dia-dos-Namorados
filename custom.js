@@ -21,7 +21,7 @@ function chuvaDeCoracoes() {
         heartContainer.appendChild(heart);
         setTimeout(() => {
             heart.remove();
-        }, 999999);
+        }, 99999);
     }
 }
 
